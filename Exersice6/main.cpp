@@ -66,15 +66,17 @@ std::string infix_to_postix(std::string infix_expr){
 }
 
 //calculate the value of a postfix expression
-int val_postfix(std::string postifx_expr){
+int val_postfix(std::string postfix_expr){
     int res;
     Stack<int>* st = new Stack<int>(false);
 
-    for(int i=0; i<postifx_expr.length(); i++){
+    for(int i=0; i<postfix_expr.length(); i++){
         //iterate through all characters
-        char c = postifx_expr.at(i);
+        char c = postfix_expr.at(i);
 
-        if(isdigit(c)){
+
+        if(isdigit(c)){  
+            c -= '0';                                    //TODO: instead of 5, 53 is pushed to st
             st->push(c);
 
         }else if(c == '+' || c == '-' || c == '*' || c == '/'){
@@ -113,3 +115,4 @@ std::cout << "Result is: " << val_postfix( "542-2*+" ) << std::endl;
 
 return 0;
 }
+

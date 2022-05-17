@@ -48,7 +48,7 @@ class Stack{
             }
 
             this->anz_items++;
-
+            
         }
 
     //pop
