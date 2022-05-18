@@ -57,12 +57,12 @@ class Tabelle{
             }
             
         }
+
         //add val at head
         bool append(T val){
             //create new node
             node* n = new node;
             n->val = val;
-
 
             if(this->length == 0){
                 //empty table
