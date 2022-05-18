@@ -30,15 +30,15 @@ class Tabelle{
         //insert val ahead of node current
         bool insert(T val){
             if(this->length == 0){  //empty table
-                this->append(val);
+                return this->append(val);
             }else{
                 //create new node
                 node* n = new node;
                 n->val = val;
 
                 if(this->current != this->tail){
-                    this->current.last.next = n;     //point last note to n
-                    n->last = this->current.last;
+                    this->current->last->next = n;     //point last note to n
+                    n->last = this->current->last;
 
                 }else{
                     n->last = nullptr;
@@ -47,11 +47,13 @@ class Tabelle{
                 }
                     
 
-                this->current.last = n;           //point current to n
+                this->current->last = n;           //point current to n
                 n->next = current;
                 
                 this->current = n;
-
+                
+                this->length++;
+                return true;
             }
             
         }
@@ -107,7 +109,7 @@ class Tabelle{
             if(this->length == 0)
                 return false;
 
-            if(this->next == nullptr)
+            if(this->current->next == nullptr)
                 return false;
 
             this->current = this->current->next;
@@ -187,7 +189,7 @@ class Tabelle{
                 return false;
 
             r = this->current->val;
-            std::cout << "r= " << r << std::endl;
+            std::cout << "r = " << r << std::endl;
             return true;
         }
 
