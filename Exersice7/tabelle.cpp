@@ -33,12 +33,15 @@ class Tabelle{
                 n->val = val;
 
                 if(this->current != this->tail){
-                    this->current.last.next = n     //point last note to n
+                    this->current.last.next = n;     //point last note to n
                     n->last = this->current.last;
 
-                    this->tail = n;
-                }else
+                }else{
                     n->last = nullptr;
+
+                    this->tail = n;
+                }
+                    
 
                 this->current.last = n;           //point current to n
                 n->next = current;
