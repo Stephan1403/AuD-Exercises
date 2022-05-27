@@ -77,10 +77,10 @@ class Tabelle{
                 return true;
 
             }else{
-                n->last = this->head;   //set this.last to last
-                this->head->next = n;    //set last.next to this
+                n->last = this->head;       //set this.last to last
+                this->head->next = n;       //set last.next to this
 
-                this->head = n;         //the current node is now the head
+                this->head = n;             //the current node is now the head
                 this->current = n;
 
                 this->length++;
