@@ -5,12 +5,17 @@
 template<class T>
 void insertionsSort(T* values, int len){
 
+//testing
+int comparisons = 0;
+
 int i, j;
 for(i=1; i<len; i++){
+    comparisons++;
 
     T an = values[i];
     j = i;
     while (j>0 && an<values[j-1]){
+        comparisons++;
 
         values[j] = values[j-1];
         j--;
@@ -23,7 +28,11 @@ for(i=1; i<len; i++){
     for(int x=0; x<len; x++){
         std::cout << values[x] << " ";
     }
+
+  
 }
+
+std::cout << "\n\nRequired comparisons: " << comparisons + len << std::endl;
 
 }
 
