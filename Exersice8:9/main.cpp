@@ -99,10 +99,26 @@ std::cout << "\n\nRequired comparisons: " << comparisons + len << std::endl;
 
 int main(){
 
-    int* a = new int[9];
-    a[0] = 0, a[1] = 10, a[2] = 20, a[3] = 1, a[4] = 11, a[5] = 21, a[6] = 2, a[7] = 12, a[8] = 22;
+    int x1[3], x2[6], x3[9];
 
-    exchangeSort<int>(a, 9);
+    for(int i=0; i<9; i++){
+        int n = (i/3)+(i%3)*10;
+        printf("%d ", n);
+
+        if(i<3){
+            x1[i] = n;
+        }
+            
+        if(i<6){
+            x2[i] = n;
+        }
+
+        x3[i] = n;
+    }
+
+    exchangeSort<int>(x1, 3);
+    exchangeSort<int>(x2, 6);
+    exchangeSort<int>(x3, 9);
 
 
 }
