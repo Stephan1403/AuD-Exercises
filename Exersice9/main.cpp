@@ -35,7 +35,7 @@ void exchangeSort(T* values, int len){
             std::cout << values[x] << " ";
     }
 
-    std::cout << "Required " << comparisons << " comparisons" << std::endl;
+    std::cout << "\nRequired " << comparisons << " comparisons" << std::endl;
 }
 
 
@@ -43,5 +43,9 @@ void exchangeSort(T* values, int len){
 
 
 int main(){
-    
+    int* a = new int[9];
+    a[0] = 0, a[1] = 10, a[2] = 20, a[3] = 1, a[4] = 11, a[5] = 21, a[6] = 2, a[7] = 12, a[8] = 22;
+
+    exchangeSort<int>(a, 9);
+
 }
