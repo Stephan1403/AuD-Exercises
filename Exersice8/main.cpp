@@ -72,10 +72,10 @@ void exchangeSort(T* values, int len){
 
     int i, j; 
     for(i=0; i<len-1; i++){
-        comparisons++;
 
         for(j=len-2; j>=i; j--){
-            comparisons+=2;
+
+            comparisons+=1;
 
             if(values[j]>values[j+1]){
                 //swap j and j+1
